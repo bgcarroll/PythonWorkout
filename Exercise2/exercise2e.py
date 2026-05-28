@@ -7,10 +7,10 @@ def sum_objects(objects):
         try:
             total += int(object)
         except TypeError as ex:
-            # end up in here for list, tuple, dict
+            # end up in here for list, tuple, set, dict
             print(f"Error Message: {ex}")
             try:
-                if type(object) in (list, tuple):
+                if type(object) in (list, tuple, set):
                     for element in object:
                         try:
                             total += int(element)
@@ -22,13 +22,15 @@ def sum_objects(objects):
                             total += int(element)
                         except ValueError as ex:
                             print(f"Error Message: {ex}")
-            except:
-                print('blew up here')
+            except Exception as ex:
+                print(f"Error Message: {ex}")
         except ValueError as ex:
             print(f"Error Message: {ex}")
 
     return total
 
 
-
-print(sum_objects([{1: 55, 2: 45}, '13', 'foo', [1,2,3], 4.5, [1,2,'foo', 50], (1,1,2)]))
+mylist = [1,6,9]
+myset = set(mylist)
+# print(sum_objects([{1: 55, 2: 45}, '13', 'foo', [1,2,3], 4.5, [1,2,'foo', 50], (1,1,2)]))
+print(sum_objects([myset, {1: 55, 2: 45}, '13', 'foo', [1,2,3], 4.5, [1,2,'foo', 50], (1,1,2)]))
