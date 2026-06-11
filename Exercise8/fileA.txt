@@ -1,0 +1,12 @@
+Python programmers are constantly dealing with text. Whether it’s because we’re
+reading from files, displaying things on the screen, or just using dicts, strings are a
+data type with which we’re likely familiar from other languages. zoo. 
+At the same time, strings in Python are unusual in that they’re also sequences—
+and thus, thinking in Python requires that you consider their sequence-like qualities.
+This means not only retrieving by the index, but also searching (using in), sorting
+(using sorted), and using slices. It also means thinking about how you can turn strings
+into lists (using str.split) and turn sequences back into strings (using str.join).
+While these tasks might seem simple, they crop up on a regular basis in production
+Python code. Zebra. Supercalifragilisticexpialidocious. The fact that these data structures and methods are written in C and
+have been around for many years means they’re also highly efficient—and not worth
+reinventing.
